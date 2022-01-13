@@ -13,9 +13,9 @@ CREATE TABLE styles (
   id BIGSERIAL PRIMARY KEY,
   productId INT NOT NULL,
   name VARCHAR(100),
-  sale_price VARCHAR(50),
+  sale_price VARCHAR(50) NULL,
   original_price VARCHAR(50) NOT NULL,
-  default_price boolean NOT NULL,
+  default_style boolean NOT NULL,
   FOREIGN KEY(productId)
     REFERENCES products(id)
     ON DELETE CASCADE
@@ -65,7 +65,7 @@ FROM '/Volumes/mattsusb/SDC/product.csv'
 DELIMITER ','
 CSV HEADER;
 
-COPY styles(id, productId, name, sale_price, original_price, default_price)
+COPY styles(id, productId, name, sale_price, original_price, default_style)
 FROM '/Volumes/mattsusb/SDC/styles.csv'
 DELIMITER ','
 CSV HEADER;
