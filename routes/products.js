@@ -1,5 +1,8 @@
 const router = require('express').Router();
 const connection = require('./../database')
+const Redis = require('redis')
+
+const client = Redis.createClient()
 
 router.get('/', (req,res) => {
   let queryStr = `SELECT * FROM products LIMIT 5`
