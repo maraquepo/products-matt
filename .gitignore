@@ -4,9 +4,4 @@ docker-compose.yml
 Dockerfile
 testing
 newrelic_agent.log
-<<<<<<< HEAD
 newrelic.js
-=======
-newrelic.js
-rel
->>>>>>> c266f588dcf4ff272ab45a7c4776254f4b773ef4
