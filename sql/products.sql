@@ -1,4 +1,4 @@
-CREATE DATABASE productsapi;
+-- CREATE DATABASE productsapi;
 
 CREATE TABLE products (
   id BIGSERIAL PRIMARY KEY,
@@ -60,32 +60,14 @@ CREATE TABLE skus (
     ON DELETE CASCADE
 );
 
-COPY products(id, name, slogan, description, category, default_price)
-FROM '/Volumes/mattsusb/SDC/product.csv'
-DELIMITER ','
-CSV HEADER;
+\COPY products(id, name, slogan, description, category, default_price) FROM '/home/ubuntu/csv/product.csv'DELIMITER ',' CSV HEADER
 
-COPY styles(id, productId, name, sale_price, original_price, default_style)
-FROM '/Volumes/mattsusb/SDC/styles.csv'
-DELIMITER ','
-CSV HEADER;
+\COPY styles(id, productId, name, sale_price, original_price, default_style) FROM '/home/ubuntu/csv/styles.csv' DELIMITER ',' CSV HEADER;
 
-COPY features(id, productId, feature, value)
-FROM '/Volumes/mattsusb/SDC/features.csv'
-DELIMITER ','
-CSV HEADER;
+\COPY features(id, productId, feature, value) FROM '/home/ubuntu/csv/features.csv' DELIMITER ',' CSV HEADER;
 
-COPY related(id, current_product_id, related_product_id)
-FROM '/Volumes/mattsusb/SDC/related.csv'
-DELIMITER ','
-CSV HEADER;
+\COPY related(id, current_product_id, related_product_id) FROM '/home/ubuntu/csv/related.csv' DELIMITER ',' CSV HEADER;
 
-COPY photos(id, styleID, thumbnail_url, url)
-FROM '/Volumes/mattsusb/SDC/photos.csv'
-DELIMITER ','
-CSV HEADER;
+\COPY photos(id, styleID, thumbnail_url, url) FROM '/home/ubuntu/csv/photos.csv' DELIMITER ',' CSV HEADER;
 
-COPY skus(id, styleID, size, quantity)
-FROM '/Volumes/mattsusb/SDC/skus.csv'
-DELIMITER ','
-CSV HEADER;
+\COPY skus(id, styleID, size, quantity) FROM '/home/ubuntu/csv/skus.csv' DELIMITER ',' CSV HEADER;
