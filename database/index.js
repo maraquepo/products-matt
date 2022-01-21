@@ -4,14 +4,15 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const connection = new Client ({
-  host: "localhost",
+  host: process.env.host,
   user: process.env.user,
   port: 5432,
-  password: process.env.pass,
+  password: 'password',
   database: "productsapi"
 })
 
-connection.connect(() => {
+connection.connect((err) => {
+  if (err) throw err
   console.log('Connection to postgreSQL DB has been established')
 });
 

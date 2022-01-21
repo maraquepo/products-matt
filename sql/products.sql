@@ -1,4 +1,4 @@
--- CREATE DATABASE productsapi;
+CREATE DATABASE productsapi;
 
 CREATE TABLE products (
   id BIGSERIAL PRIMARY KEY,

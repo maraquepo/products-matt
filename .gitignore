@@ -2,7 +2,6 @@ node_modules
 .env
 docker-compose.yml
 Dockerfile
+/testing
 test.js
-newrelic_agent.log
-newrelic.js
-testing
+.newrelic.js
