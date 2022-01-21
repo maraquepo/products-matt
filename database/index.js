@@ -7,7 +7,7 @@ const connection = new Client ({
   host: process.env.host,
   user: process.env.user,
   port: 5432,
-  password: 'password',
+  password: process.env.pass,
   database: "productsapi"
 })
 
